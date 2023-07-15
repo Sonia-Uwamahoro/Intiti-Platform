@@ -1,0 +1,55 @@
+
+
+
+<!--this is the login file-->
+{% extends 'main.html'%}
+
+{% block content %}
+
+{% if page == 'login' %}
+
+<!-- this is login-->
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="Enter Username"/>
+
+        <label>Password: </label>
+        <input type="password" name="password" placeholder="Enter Password"/>
+
+        <input type="submit" value="Login"/>
+    </form>
+    <p>dont have an acount yet?</p>
+    <a href="{% url 'register' %}">Sign Up</a>
+</div>
+
+{% else %}
+
+<!-- this is register-->
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Register"/>
+    </form>
+    <p>have an acount already?</p>
+    <a href="{% url 'login' %}">Sign In</a>
+</div>
+
+{% endif %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+

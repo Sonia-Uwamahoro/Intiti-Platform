@@ -1,0 +1,26 @@
+<!--this room is for creating rooms and deleting them instead of using the databases-->
+{% extends 'main.html'%}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
